@@ -1,25 +1,22 @@
 <template>
-  <main-screen
+  <div>
+
+    <main-screen
     v-if="statusMatch === 'default'"
     @onStart="onHandleBeforeStart($event)"
-  />
-  <interact-screen
+    />
+    <interact-screen
     v-if="statusMatch === 'match'"
     :cardsContext="settings.cardsContext"
     @onFinish="onGetResult"
-  />
-  <result-screen
+    />
+    <result-screen
     v-if="statusMatch === 'result'"
     :timer="timer"
     @onStartAgain="statusMatch = 'default'"
-  />
-  <p class="copyright">
-    This game owned by RHP Team in Vue 3 course for begginers -
-    <a
-      href="https://www.youtube.com/watch?v=CHM75-NqOmk&list=PLU4OBh9yHE94sZ3TPGt0QG_PIwrZ1QF6i"
-      >view here</a
-    >
-  </p>
+    />
+  </div>
+   
 </template>
 
 <script>
